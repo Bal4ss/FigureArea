@@ -4,6 +4,10 @@ namespace FigureArea.Common.Figures
 {
     public class Triangle : BaseFigure
     {
+        private double _a;
+        private double _b;
+        private double _c;
+        
         public Triangle()
             : base("Triangle")
         {
@@ -17,10 +21,24 @@ namespace FigureArea.Common.Figures
             B = b;
             C = c;
         }
+
+        public double A
+        {
+            get => _a;
+            set => _a = value >= 0 ? value : -value;
+        }
         
-        public double A { get; set; }
-        public double B { get; set; }
-        public double C { get; set; }
+        public double B
+        {
+            get => _b;
+            set => _b = value >= 0 ? value : -value;
+        }
+        
+        public double C
+        {
+            get => _c;
+            set => _c = value >= 0 ? value : -value;
+        }
 
         public bool IsRight
         {

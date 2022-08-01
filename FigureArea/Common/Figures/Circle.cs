@@ -4,6 +4,8 @@ namespace FigureArea.Common.Figures
 {
     public class Circle : BaseFigure
     {
+        private double _radius;
+        
         public Circle()
             : base("Circle")
         {
@@ -16,7 +18,11 @@ namespace FigureArea.Common.Figures
             Radius = radius;
         }
 
-        public double Radius { get; set; }
+        public double Radius
+        {
+            get => _radius;
+            set => _radius = value >= 0 ? value : -value;
+        }
         
         public override double Area()
         {

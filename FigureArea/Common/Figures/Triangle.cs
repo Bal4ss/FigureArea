@@ -62,9 +62,9 @@ namespace FigureArea.Common.Figures
 
         public override double Area()
         {
-            if (A == 0 || B == 0 || C == 0)
-                return 0;
-            
+            if (A + B < C || A + C < B || B + C < A)
+                throw new ArgumentOutOfRangeException(Name);
+
             var p = (A + B + C) / 2;
             
             return Math.Sqrt(p * (p - A) * (p - B) * (p - C));
